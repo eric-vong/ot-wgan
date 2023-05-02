@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
@@ -14,7 +13,7 @@ torch.normal(mean=torch.zeros(10), std=torch.ones(10))
 
 class Critic(torch.nn.Module):
     def __init__(self, channels=[512, 512]):
-        super(Critic, self).__init__()
+        super().__init__()
         self.flatten = torch.nn.Flatten()
         self.linear_relu_stack = torch.nn.Sequential(
             torch.nn.Linear(1, channels[0]),
@@ -31,6 +30,7 @@ class Critic(torch.nn.Module):
         return self.linear_relu_stack(first_law_sample), self.linear_relu_stack(
             second_law_sample
         )
+
 
 def critic_training(sampler1, sampler2, model, optimizer, n_critic, device):
     pbar = tqdm(range(n_critic))
@@ -77,6 +77,7 @@ def sampler2(length_batch, device):
         .reshape(length_batch, 1)
     )
     return sample
+
 
 # model = Critic()
 
