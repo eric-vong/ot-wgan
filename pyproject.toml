@@ -4,7 +4,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "ot_wgan"
+name = "ot-wgan"
 version = "0.1.0"
 description = "Research Project on Optimal Transport and Wasserstein GAN"
 authors = [
@@ -12,7 +12,7 @@ authors = [
 ]
 readme = "README.md"
 license="MIT"
-repository="https://github.com/eric-vong/ot_wgan"
+repository="https://github.com/eric-vong/ot-wgan"
 
 # Dependencies
 [tool.poetry.dependencies]
